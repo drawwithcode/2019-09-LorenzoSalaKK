@@ -12,9 +12,9 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight)
-  frameRate(120)
-  imageMode(CENTER)
+  createCanvas(windowWidth, windowHeight);
+  frameRate(120);
+  imageMode(CENTER);
   angleMode(DEGREES);
 }
 
@@ -41,8 +41,8 @@ function draw() {
     fill(255);
 
   } else {
-    meatx = map(rotationY, -180, 180, windowWidth / 4, windowWidth * 3 / 4);
-    meaty = map(rotationX, -180, 180, windowHeight / 4 - 10, windowHeight * 3 / 4 - 10);
+    meatx = map(rotationY, -180, 180, windowWidth / 6, windowWidth * 5 / 6);
+    meaty = map(rotationX, -180, 180, windowHeight / 6 - 10, windowHeight * 5 / 6 - 10);
     meatwid = meat.width / 3;
     meathei = meat.height / 3;
   }
@@ -60,7 +60,7 @@ function draw() {
 function touchMoved() {
   return false;
 }
-
-function touchEnded(event) {
-  DeviceOrientationEvent.requestPermission()
-}
+// 
+// function touchEnded(event) {
+//   DeviceOrientationEvent.requestPermission()
+// }
