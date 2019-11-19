@@ -58,10 +58,10 @@ function draw() {
 }
 
 function touchMoved() {
-  
+
   return false;
 }
-//
-// function touchEnded(event) {
-//   DeviceOrientationEvent.requestPermission()
-// }
+
+function touchEnded(event) {
+  DeviceOrientationEvent.requestPermission()
+}
