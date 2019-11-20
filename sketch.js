@@ -26,14 +26,15 @@ function draw() {
   image(pan, panx, pany, pan.width / 8, pan.height / 8)
   image(meat, meatx, meaty, meatwid, meathei)
 
-  if (rotationX > 35 && rotationX <= 90) {
-    meatx = map(rotationY, -180, 180, windowWidth / 4, windowWidth * 3 / 4);
-    meaty = map(rotationX, -180, 180, windowHeight / 4 - 10, windowHeight * 3 / 4 - 10);
-    var meatmulti = map(rotationX, 35, 90, 1, 2.5);
-    meatwid = meat.width * meatmulti / 3;
-    meathei = meat.height * meatmulti / 3;
-
-  } else if ((rotationY > 90 || rotationY < -90) || (rotationX > 90 || rotationX < -90)) {
+  // if (rotationX > 35 && rotationX <= 90) {
+  //   meatx = map(rotationY, -180, 180, windowWidth / 4, windowWidth * 3 / 4);
+  //   meaty = map(rotationX, -180, 180, windowHeight / 4 - 10, windowHeight * 3 / 4 - 10);
+  //   var meatmulti = map(rotationX, 35, 90, 1, 2.5);
+  //   meatwid = meat.width * meatmulti / 3;
+  //   meathei = meat.height * meatmulti / 3;
+  //
+  // } else
+  if ((rotationY > 90 || rotationY < -90) || (rotationX > 90 || rotationX < -90)) {
     meatx = windowWidth / 2;
     meaty = windowHeight / 2 - 10;
     meatwid = meat.width * 5;
@@ -55,6 +56,14 @@ function draw() {
   // text(round(rotationX), width / 2, height / 2);
   //
   // text(round(rotationY), width / 2, height / 6 * 5);
+}
+
+function deviceShaken() {
+  meatx = map(rotationY, -180, 180, windowWidth / 4, windowWidth * 3 / 4);
+  meaty = map(rotationX, -180, 180, windowHeight / 4 - 10, windowHeight * 3 / 4 - 10);
+  var meatmulti = map(rotationX, 35, 90, 1, 2.5);
+  meatwid = meat.width * meatmulti / 3;
+  meathei = meat.height * meatmulti / 3;
 }
 
 function touchMoved() {
